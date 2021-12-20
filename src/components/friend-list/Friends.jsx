@@ -1,19 +1,24 @@
 import PropTypes from "prop-types";
+import {
+  Card,
+  Status,
+  Img,
+  FriendName,
+} from './Friends.styled';
 
 const Friends = ({ avatar, name, isOnline }) => {
   return (
-    <div>
-      <span className="status"></span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name-friends">{name}</p>
-    </div>
+    <Card>
+      <Status Stat = {isOnline}></Status>
+      <Img src={avatar} alt="User avatar" />
+      <FriendName>{name}</FriendName>
+    </Card>
   );
 };
 
 Friends.propTypes = {
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
 };
 
 export default Friends;
