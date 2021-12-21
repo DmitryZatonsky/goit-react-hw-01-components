@@ -11,7 +11,7 @@ const Statistics = ({ title, stats }) => {
   console.log();
   return (
     <Container>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       <List>
         {stats.map((stat) => (
           <Item key={stat.id}>
